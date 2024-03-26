@@ -11,10 +11,17 @@ void main() {
               Color(0xff6ca439),
               Colors.yellowAccent,
               Color.fromARGB(255, 45, 18, 134)
-            ]),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight
+            ),
           ),
           child: const Center(
-            child: Text('Hello World from Erick'),
+            child: Text('Hello World from Erick',
+            style: TextStyle(
+              color: Colors.redAccent,
+              fontSize: 30
+              ),),
           ),
         ),
       ),
