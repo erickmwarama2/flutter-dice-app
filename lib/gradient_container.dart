@@ -8,14 +8,31 @@ class GradientContainer extends StatelessWidget {
 
   final List<Color> colors;
 
+  void rollDice() {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
-        gradient: LinearGradient(colors: colors, begin: startAlignment, end: endAlignment),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: colors, begin: startAlignment, end: endAlignment),
       ),
       child: Center(
-        child: StyledText('New text from constructor'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/dice-2.png',
+              width: 200,
+            ),
+            TextButton(
+              onPressed: rollDice,
+              child: const Text('Roll Dice'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -24,7 +41,7 @@ class GradientContainer extends StatelessWidget {
 // ignore: must_be_immutable
 class StyledText extends StatelessWidget {
   // StyledText(this.text, {super.key});
-  StyledText(String text, {super.key}): outputText = text;
+  StyledText(String text, {super.key}) : outputText = text;
 
   // String text;
   String outputText;
